@@ -1,0 +1,193 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.modal-form-base{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: black;
+    width: 40%;
+    margin: 160px 30%;
+    border-radius: 10px;
+    z-index: 11;
+    padding: 10px 20px;
+}
+
+.modal-form-header{
+    font-size: calc(1.3vh + 1.1em);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-form-body{
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.modal-form-block, .modal-form-block-header{
+    display: table-cell;
+    font-size: calc(0.7vh + 0.7em);
+    vertical-align: middle;
+    width: 50%;
+}
+.modal-form-block-header {
+    padding-left: 40px;
+    font-size: calc(1vh + 1em);
+}
+
+.modal-form-base-seacrh {
+    position: fixed;
+    color: black;
+    width: 40%;
+    margin: 50px 30%;
+    border-radius: 10px;
+    z-index: 10;
+    padding: 20px;
+}
+.search {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #edebf5;
+    font-size: calc(0.7vh + 0.7em);
+    background-color: white;
+    padding: 10px;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    color: #071D2B;
+}
+
+.searchTerm:focus{
+    color: black;
+}
+
+.searchButton {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #edebf5;
+    background: #edebf5;
+    text-align: center;
+    color: #000;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: calc(0.8vh + 0.8em);
+}
+
+.header-profile {
+    font-size: calc(1vh + 1em);
+}
+
+.profile {
+    background-color: rgba(255, 255, 255, 0.91);
+    padding-bottom: 20px;
+}
+
+.profile-avatars{
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-description{
+    text-align: center;
+    list-style: none;
+    line-height: 1.5;
+    font-size: calc(0.8vh + 0.8em);
+    margin-bottom: 20px;
+}
+.profile-name{
+    font-size: 150%;
+}
+.buttons-block{
+    width: 80%;
+    margin: 0 auto;
+}
+.profile-buttin-login, .profile-buttin-register {
+    width: 50%;
+    height: 40px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.07);
+    color: #000;
+}
+
+.profile-buttin-register {
+    border-radius: 0 10px 10px 0;
+}
+.profile-buttin-login {
+    border-radius: 10px 0 0 10px;
+}
+.profile-buttin-login:hover, .profile-buttin-register:hover {
+    border: 2px solid #1c79b8;
+}
+.login-panel-block, .register-panel-block{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.login-panel-header, .register-panel-header {
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+.login-error{
+    color: red;
+    height: 20px;
+}
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid rgba(0,0,0,0.24);
+    margin-bottom: 30px;
+}
+
+.input {
+    font-size: 16px;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    padding: 0 5px 0 38px;
+    color: #0a022b;
+}
+.container-login-form-btn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.login-form-btn {
+    font-size: 16px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.07);
+    color: #0a022b;
+    margin: 0 auto;
+}
+
+.login-form-btn:hover {
+    border: 2px solid #1c79b8;
+}

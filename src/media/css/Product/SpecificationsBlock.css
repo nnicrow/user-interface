@@ -1,0 +1,57 @@
+.specifications-block {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    margin: 0 15%;
+    border-radius: 10px;
+    padding: 10px 40px 40px;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.description{
+    font-size: calc(0.3em + 1vw);
+    text-align:justify;
+}
+
+.description_header{
+    padding: 30px;
+    color: #1c79b8;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: calc(0.4em + 1.2vw);
+}
+.option{
+    display: table;
+    padding: 20px;
+}
+
+.option-header{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 50px;
+    font-size: calc(0.4em + 1vw);
+    width: 30%;
+    height: 100%;
+}
+
+.option-value{
+    font-size: calc(0.3em + 0.7vw);
+}
+
+.option + .option{
+    border-top: 1px solid #1c79b8;
+}
+
+.externalProduct{
+    display: flex;
+}
+
+.externalProductName, .externalProductPrice{
+    padding-left: 200px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.externalProductPrice {
+
+}

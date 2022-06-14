@@ -1,0 +1,279 @@
+/* USER VARIABLES SECTION */
+
+:root {
+    --accent: #CC8869;
+    --text: #333;
+    --regular-text: 16px;
+    --lineheight: 1x.65;
+    --userfont: inherit;
+    --systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    --padding: 120px;
+    --transition: cubic-bezier(.4, 0, 0, 1);
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
+.row, .row > * { --bs-gutter-x: 1.25rem; }
+
+::placeholder { color: #666; }
+/*::selection { background-color: var(--accent); color: #fff; }*/
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+.showcase {
+    height: 100%;
+    position: relative;
+    padding-bottom: 50px;
+    color: #020f24;
+     /*overflow: hidden;*/
+}
+.showcase::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: inset 0 0 500px #FFF;
+}
+.showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../../images/light.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -65px;
+    animation: k-light 3s ease-in-out infinite;
+}
+
+.showcase__content-wrapper {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    /*padding: var(--padding) 0;*/
+}
+
+.showcase__header {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    top: 80px;
+    font-size: 32px;
+    color: rgba(0, 0, 0, .75);
+}
+.showcase__header span {
+    /*color: var(--accent);*/
+}
+.showcase-carousel .swiper-wrapper {
+    /*transition: var(--transition);*/
+}
+.showcase-carousel__item {
+    position: relative;
+    /*height: calc(100vh - var(--padding)*2);*/
+    text-align: center;
+    opacity: .3;
+    transform: scale(.75);
+    /*transition: opacity 1.8s var(--transition), transform 1.8s var(--transition)*/
+}
+.showcase-carousel__item p {
+    position: absolute;
+    bottom: -85px;
+    width: 100%;
+    font-size: 32px;
+    color: rgba(255, 255, 255, .5);
+    text-shadow: rgb(58 78 94) 0 0 10px;
+}
+.showcase-carousel__item.swiper-slide-active {
+    opacity: 0.9;
+    transform: scale(.98);
+}
+.showcase-carousel__image-wrapper > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    perspective: 150px;
+    transform-style: preserve-3d;
+}
+.showcase-carousel__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.showcase-carousel__image-left {
+    perspective-origin: left center;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+.showcase-carousel__image-right {
+    perspective-origin: right center;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+.showcase-carousel__image-left .showcase-carousel__image {
+    animation: k-left-side 2s ease-in-out infinite;
+    animation-direction: alternate;
+}
+.showcase-carousel__image-right .showcase-carousel__image {
+    animation: k-right-side 2s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+/* NAVIGATION */
+
+.showcase-navigation {
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.showcase-navigation > * {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    outline: none;
+    cursor: pointer;
+}
+.showcase-navigation__next {
+    right: 0;
+}
+.showcase-navigation > *::before {
+    content: '‹';
+    opacity: 0;
+    transition: opacity .75s ease-out;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    font-size: 100px;
+}
+.showcase-navigation > *:hover::before {
+    opacity: .25;
+}
+.showcase-navigation__next::before {
+    transform: rotate(180deg);
+    right: 50px;
+    left: auto;
+}
+.showcase-navigation > *.swiper-button-disabled {
+    display: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes k-light {
+    0% {
+        opacity: .2;
+    }
+    50% {
+        opacity: .3;
+    }
+    100% {
+        opacity: .2;
+    }
+}
+@keyframes k-glow {
+    0% {
+        opacity: .6;
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: .6;
+    }
+}
+@keyframes k-left-side {
+    0% {
+        transform: rotateY(-1deg) scaleX(.92);
+    }
+    100% {
+        transform: rotateY(0deg) scaleX(1);
+    }
+}
+@keyframes k-right-side {
+    0% {
+        transform: rotateY(0deg) scaleX(1);
+    }
+    100% {
+        transform: rotateY(1deg) scaleX(.92);
+    }
+}
+
+/* === DESKTOP FIRST === */
+
+/* xl <= Extra extra large (xxl) */
+@media (max-width : 1400px) {
+
+    .showcase__content {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+}
+
+/* lg <= Extra large (xl) */
+@media (max-width : 1200px) {
+
+}
+
+/* md <= Large (lg) */
+@media (max-width : 992px) {
+
+}
+
+/* sm <= Medium (md) */
+@media (max-width : 768px) {
+
+}
+
+/* xs <= Small (sm) */
+@media (max-width : 576px) {
+
+}
+
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@media (min-width : 0) {
+
+}
+
+/* Small (sm) */
+@media (min-width : 576px) {
+
+}
+
+/* Medium (md) */
+@media (min-width : 768px) {
+
+}
+
+/* Large (lg) */
+@media (min-width : 992px) {
+
+}
+
+/* Extra large (xl) */
+@media (min-width : 1200px) {
+    .text {
+        font-size: 18px;
+    }
+}
+
+/* Extra extra large (xxl) */
+@media (min-width : 1400px) {
+    .text {
+        font-size: 22px;
+    }
+}
